@@ -177,4 +177,5 @@ Feedstock Maintainers
 =====================
 
 * [@apcamargo](https://github.com/apcamargo/)
+* [@shenwei356](https://github.com/shenwei356/)
 
