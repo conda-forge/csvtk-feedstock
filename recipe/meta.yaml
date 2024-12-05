@@ -1,5 +1,5 @@
 {% set name = "csvtk" %}
-{% set version = "0.31.1" %}
+{% set version = "0.32.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/shenwei356/csvtk/archive/v{{ version }}.tar.gz
-  sha256: f992fdd80c9cf4589931da9fbe7344b9e508fe53de54a8b8646c8fe83135f723
+  sha256: eb54e0a14207b6c58cefd9bc6747453e758b2bdbf8e111df9873628b6fa23a01
 
 build:
   number: 0
