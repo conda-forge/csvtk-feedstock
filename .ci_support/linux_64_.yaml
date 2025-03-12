@@ -11,4 +11,4 @@ target_platform:
 tk:
 - '8.6'
 vtk:
-- 9.3.0
+- 9.3.1
