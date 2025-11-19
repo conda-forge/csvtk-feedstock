@@ -3,9 +3,11 @@ go build -buildmode=pie -trimpath -o="%LIBRARY_BIN%\csvtk.exe" -ldflags="-s -w -
 go-licenses save . --save_path=license-files  --ignore github.com/ajstarks/svgo --ignore github.com/golang/freetype/raster || goto :error
 
 
-REM Create a copy named tsvtk.
+REM Create a hard link named tsvtk.
 REM When invoked as "tsvtk", csvtk will automatically enable the "-t/--tabs" flag.
-copy /Y "%LIBRARY_BIN%\csvtk.exe" "%LIBRARY_BIN%\tsvtk.exe"
+cd "%LIBRARY_BIN%"
+del /F /Q tsvtk.exe 2>nul
+mklink /H tsvtk.exe csvtk.exe
 
 goto :EOF
 
