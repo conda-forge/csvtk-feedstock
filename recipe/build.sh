@@ -8,9 +8,9 @@ go-licenses save . --save_path=license-files --ignore github.com/ajstarks/svgo -
 
 # Install shell completions
 mkdir -p ${PREFIX}/share/zsh/site-functions ${PREFIX}/share/bash-completion/completions ${PREFIX}/share/fish/vendor_completions.d
-${PREFIX}/bin/csvtk completion --shell zsh --file ${PREFIX}/share/zsh/site-functions/_csvtk
-${PREFIX}/bin/csvtk completion --shell bash --file ${PREFIX}/share/bash-completion/completions/csvtk
-${PREFIX}/bin/csvtk completion --shell fish --file ${PREFIX}/share/fish/vendor_completions.d/csvtk.fish
+${PREFIX}/bin/csvtk genautocomplete --shell zsh --file ${PREFIX}/share/zsh/site-functions/_csvtk
+${PREFIX}/bin/csvtk genautocomplete --shell bash --file ${PREFIX}/share/bash-completion/completions/csvtk
+${PREFIX}/bin/csvtk genautocomplete --shell fish --file ${PREFIX}/share/fish/vendor_completions.d/csvtk.fish
 
 # Create a symbolic link named tsvtk.
 # When invoked as "tsvtk", csvtk will automatically enable the "-t/--tabs" flag.
