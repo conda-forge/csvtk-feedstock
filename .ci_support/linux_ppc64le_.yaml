@@ -6,5 +6,3 @@ docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le:alma9
 target_platform:
 - linux-ppc64le
-vtk:
-- 9.5.1

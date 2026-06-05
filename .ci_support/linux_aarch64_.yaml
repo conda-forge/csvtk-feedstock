@@ -6,7 +6,3 @@ docker_image:
 - quay.io/condaforge/linux-anvil-aarch64:alma9
 target_platform:
 - linux-aarch64
-tk:
-- '8.6'
-vtk:
-- 9.5.1
