@@ -3,7 +3,15 @@
 set -o xtrace -o nounset -o pipefail -o errexit
 
 cd csvtk
-go build -buildmode=pie -trimpath -o=${PREFIX}/bin/csvtk -ldflags="-s -w -X main.Version=${PKG_VERSION}"
+if [[ "${host_platform}" == "linux-riscv64" ]]; then
+  go build -trimpath \
+    -o="${PREFIX}/bin/csvtk" \
+    -ldflags="-s -w -X main.Version=${PKG_VERSION}"
+else
+  go build -buildmode=pie -trimpath \
+    -o="${PREFIX}/bin/csvtk" \
+    -ldflags="-s -w -X main.Version=${PKG_VERSION}"
+fi
 go-licenses save . --save_path=license-files --ignore github.com/ajstarks/svgo --ignore github.com/golang/freetype/raster
 
 # Install shell completions
