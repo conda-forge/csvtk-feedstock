@@ -1,33 +1,36 @@
-{% set name = "csvtk" %}
-{% set version = "0.38.0" %}
+schema_version: 1
+
+context:
+  name: csvtk
+  version: "0.38.0"
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://github.com/shenwei356/csvtk/archive/v{{ version }}.tar.gz
+  url: https://github.com/shenwei356/csvtk/archive/v${{ version }}.tar.gz
   sha256: 0b2ed4c03b6082179b6c0d117a6d8e74d9bf53f334bb15d952fa059f58206d06
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
-    - {{ compiler('go-nocgo') }}
+    - ${{ compiler('go-nocgo') }}
     - go-licenses
 
-test:
-  commands:
-    - csvtk --help
+tests:
+  - script:
+      - csvtk --help
 
 about:
-  home: https://github.com/shenwei356/csvtk
   license: MIT
   license_file:
     - LICENSE
     - csvtk/license-files/
   summary: A cross-platform, efficient and practical CSV/TSV toolkit in Golang
+  homepage: https://github.com/shenwei356/csvtk
 
 extra:
   recipe-maintainers:
